@@ -7,7 +7,8 @@
 #include "opencv2/imgproc.hpp"
 #include "opencv2/imgcodecs.hpp"
 #include "opencv2/highgui.hpp"
-//#include <iostream>  
+
+#include <iostream>  
 
 
 using namespace cv;
@@ -164,7 +165,7 @@ Rect2i cutwordarea(Mat SrcImage, vector<Vec2f> HoughLines) //return 900 * 1600
 	}
 	printf("Word Area Line Size:%ld\n", (long)AreaLines.size());
 
-	printf("%f, %f, %f, %f, %f, %f, %f, %f\n", 
+	printf("Line Point:%f, %f, %f, %f, %f, %f, %f, %f\n", 
 		AreaLines[0][0],
 		AreaLines[0][1], 
 		AreaLines[1][0], 
@@ -410,4 +411,11 @@ Rect2i boundingrectofoneword(Mat oneWord)
 		maxy += 1;
 	Rect2i RectMin(Point(minx, miny), Size2i(maxx - minx, maxy - miny));
 	return RectMin;
+}
+
+int png2MatlabMatrix(char *imagDirection)
+{
+	//FILE fntFile;
+	//fntFile = fopen(imagDirection)
+
 }

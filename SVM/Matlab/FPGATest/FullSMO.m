@@ -7,8 +7,7 @@ examineAll = 1;
 alpha = zeros(mxt, 1);
 E = zeros(mxt, 1);
 b = 0;
-
-while(numChanged > 0 || examineAll)
+while(numChanged > 0 || examineAll == 1)
     numChanged = 0;
     if(examineAll)
         for i = 1 : mxt
@@ -29,5 +28,22 @@ while(numChanged > 0 || examineAll)
     elseif(numChanged == 0)
         examineAll = 1;
     end
-    
 end
+
+w = ((yt .* alpha)' * xt);
+
+close all;
+hold on;
+for i = 1:mxt
+    if(yt(i) == 1)
+        plot(xt(i, 1), xt(i, 2), 'rx');
+    end
+    if(yt(i) == -1)
+        plot(xt(i, 1), xt(i, 2), 'bo');
+    end
+end
+
+k = -w(1)/w(2);
+
+xxx = [0 : 50];
+plot(xxx, k*xxx + b);

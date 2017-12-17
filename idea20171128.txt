@@ -1,0 +1,1 @@
+1. use push-pop stack to write a handwriting word;

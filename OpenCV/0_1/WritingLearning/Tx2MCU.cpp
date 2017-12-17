@@ -14,7 +14,8 @@ void pbm2binary6464bin(char *FileName)
 	}
 	else
 	{
-		printf("File Name doest'n exit.");
+		printf("File Name doest'n exit.\r\n");
 	}
 
 }
+

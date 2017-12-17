@@ -21,12 +21,6 @@
     <ClInclude Include="targetver.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="opencv.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Tx2Mcu.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -35,10 +29,10 @@
     <ClCompile Include="WritingLearning.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="opencv.cpp">
+    <ClCompile Include="Tx2MCU.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Tx2MCU.cpp">
+    <ClCompile Include="opencv.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

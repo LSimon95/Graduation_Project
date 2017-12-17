@@ -3,12 +3,13 @@ function [Result, alpha, b, E] = takeStep(i1, i2, xt, yt, C, alpha, b, E)
 if(i1 == i2)
     Result = 0;
     return;
-end 
+end
 a1 = alpha(i1);
 a2 = alpha(i2); 
 y1 = yt(i1);
 y2 = yt(i2);
-
+E(i1) = fx(xt(i1, :), xt, yt, alpha, b) - y1;
+E(i2) = fx(xt(i2, :), xt, yt, alpha, b) - y2;
 
 s = y1 * y2;
 if(y1 == y2)
@@ -41,10 +42,9 @@ if(abs(a2 - alpha(i2)) < 10e-5)
     return;
 end
 
-a1 = alpha(i1) + s*(alpha(i2) - a2);
+a1 = alpha(i1) + s * (alpha(i2) - a2);
 
  %compute b1, b2, b
-b = 0;
 b1 = E(i1) + y1 * (a1 - alpha(i1)) * (xt(i1, :) * xt(i1, :)') + y2 * (a2 - alpha(i2)) * (xt(i1, :) * xt(i2, :)') + b;
 b2 = E(i2) + y1 * (a1 - alpha(i1)) * (xt(i1, :) * xt(i2, :)') + y2 * (a2 - alpha(i2)) * (xt(i2, :) * xt(i2, :)') + b;
 if(a1 > 0 && a1 < C)
@@ -57,8 +57,8 @@ end
 %update w
 
 %updata E
-E(i1) = fx(xt(i1)) - y1;
-E(i2) = fx(xt(i2)) - y2;
+E(i1) = fx(xt(i1, :), xt, yt, alpha, b) - y1;
+E(i2) = fx(xt(i2, :), xt, yt, alpha, b) - y2;
 
 alpha(i1) = a1;
 alpha(i2) = a2;

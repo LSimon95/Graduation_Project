@@ -1,2 +1,6 @@
-﻿  opencv.cpp
+﻿  stdafx.cpp
+  WritingLearning.cpp
+  Tx2MCU.cpp
+  opencv.cpp
+  Generating Code...
   WritingLearning.vcxproj -> C:\Users\qanpa\Google Drive\Document\School\In_Progress\Graduation_Project\OpenCV\0_1\WritingLearning\x64\Debug\WritingLearning.exe
